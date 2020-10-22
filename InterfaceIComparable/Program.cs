@@ -9,11 +9,19 @@ namespace InterfaceIComparable
     {
         static void Main(string[] args)
         {
-            string path = @"C:\Users\apagar\Projects\InterfaceIComparable\employees.csv";
+            //Path for Windows
+            //string pathHardCode = @"C:\Users\apagar\Projects\InterfaceIComparable\employees.csv";
+
+            //Path for macOS
+            string pathHardCode = "/Users/nxgames/Projects/interfaceicomparable";
+
+            string fileSource = "employees.csv";
+
+            string pathSourceFile = pathHardCode + Path.DirectorySeparatorChar + fileSource;
 
             try
             {
-                using (StreamReader sr = File.OpenText(path))
+                using (StreamReader sr = File.OpenText(pathSourceFile))
                 {
                     List<Employee> list = new List<Employee>();
                     while (!sr.EndOfStream)
